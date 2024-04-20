@@ -1,0 +1,1 @@
+import: prsoa/docker-training:react-app/travis-ci.yml@main
