@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t prsoa/docker-training -f react-app/Dockerfile.dev .
+  - docker build -t prsoa/docker-training -f react-app/Dockerfile.dev react-app/.
     
 script:
   - docker run -e CI=true prsoa/docker-training npm run test
