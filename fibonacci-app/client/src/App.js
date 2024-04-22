@@ -1,9 +1,9 @@
-import logo from './logo.svg';
-import { BrowserRouter, Routes, Route, Outlet, Link } from 'react-router-dom';
-import './App.css';
+import logo from "./logo.svg";
+import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
+import "./App.css";
 
-import Fib from './Fib';
-import OtherPage from './OtherPage';
+import Fib from "./Fib";
+import OtherPage from "./OtherPage";
 
 function App() {
   return (
