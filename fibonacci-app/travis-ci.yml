@@ -6,7 +6,7 @@ before_install:
   - docker build -t prsoaz/react-app -f ./fibonacci-app/client/Dockerfile.dev ./fibonacci-app/client
 
 script:
-  - docker run -e CI=true prsoaz/react-test npm test
+  - docker run -e CI=true prsoaz/react-app npm test
 
 after_success:
   - docker build -t prsoaz/fib-client ./fibonacci-app/client
