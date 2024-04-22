@@ -3,16 +3,16 @@ services:
   - docker
 
 before_install:
-  - docker build -t prsoaz/react-app -f ./client/Dockerfile.dev ./client
+  - docker build -t prsoaz/react-app -f ./fibonacci-app/client/Dockerfile.dev ./fibonacci-app/client
 
 script:
-  - docker run -e CI=true USERNAME/react-test npm test
+  - docker run -e CI=true prsoaz/react-test npm test
 
 after_success:
-  - docker build -t prsoaz/fib-client ./client
-  - docker build -t prsoaz/fib-nginx ./nginx
-  - docker build -t prsoaz/fib-server ./server
-  - docker build -t prsoaz/fib-worker ./worker
+  - docker build -t prsoaz/fib-client ./fibonacci-app/client
+  - docker build -t prsoaz/fib-nginx ./fibonacci-app/nginx
+  - docker build -t prsoaz/fib-server ./fibonacci-app/server
+  - docker build -t prsoaz/fib-worker ./fibonacci-app/worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push -t prsoaz/fib-client
   - docker push -t prsoaz/fib-nginx
