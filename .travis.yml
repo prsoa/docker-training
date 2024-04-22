@@ -1,1 +1,1 @@
-import: prsoa/docker-training:react-app/travis-ci.yml@main
+import: prsoa/docker-training:fibonacci-app/travis-ci.yml@main
