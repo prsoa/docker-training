@@ -14,7 +14,7 @@ after_success:
   - docker build -t prsoaz/fib-server ./fibonacci-app/server
   - docker build -t prsoaz/fib-worker ./fibonacci-app/worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push -t prsoaz/fib-client
-  - docker push -t prsoaz/fib-nginx
-  - docker push -t prsoaz/fib-server
-  - docker push -t prsoaz/fib-worker
+  - docker push prsoaz/fib-client
+  - docker push prsoaz/fib-nginx
+  - docker push prsoaz/fib-server
+  - docker push prsoaz/fib-worker
